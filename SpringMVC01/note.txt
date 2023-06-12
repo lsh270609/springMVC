@@ -1,0 +1,12 @@
+pom.xml
+
+	servlet-api
+	
+	jsp-api
+	
+	jstl
+	
+	springWebMVC
+	
+xml 파일로 setting하기
+WebContent > resources > servlet-content.xml

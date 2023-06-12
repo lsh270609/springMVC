@@ -1,0 +1,7 @@
+230602
+	
+	MVC : Model-View-Controller
+	
+	Model : Application business layer - business logic 처리 + DB 연동 작업
+	View : Application presentation layer - controller 가 Model 에서 가져온 data 표시
+	Controller : Application 흐름 제어 - View와 Model 를 이어주는 역할을 함

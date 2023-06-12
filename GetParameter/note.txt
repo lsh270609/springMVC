@@ -1,0 +1,21 @@
+
+parameter 추출하기
+
+HttpServletReqeust 사용
+	Spring MVC 는 필요한 객체나 data 는 주입 받아서 사용함
+	객체를 주입(injection) 받는다는 의미
+	
+WebReqeust 사용
+
+@PathVariable 사용
+	ㄴ data 가 요청 주소에 있는 경우, 값을 주입 받을 수 있는 Annotation
+	   Restful API 서버 프로그래밍에서 주로 사용함
+	   (URL)/값1/값2/값3...
+	   
+@RequestParam
+	ㄴ 파라미터(로 전달된 값)를 직접 주입 받음
+	   지정된 변수의 이름과 파라미터의 이름이 같은 경우 값을 주입 받음
+	   형변환도 가능
+	   value : 파라미터의 이름과 변수의 이름이 다를 경우 파라미터의 이름 지정
+	   required : false로 설정하면 지정된 이름의 파라미터가 없는 경우 null 이 주입됨
+	   defaultValue : "원하는 숫자" 로 지정한 경우 지정된 이름의 파라미터가 없는 경우 원하는 숫자가 주입됨

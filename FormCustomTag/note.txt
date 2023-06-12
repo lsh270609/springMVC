@@ -1,0 +1,6 @@
+
+Form Custom Tag
+  ㄴ Spring 에서 <form: 태그이름> 형태로 제공되는 태그
+  From Cutom Tag 를 사용하면
+  Model 객체에 저장된(담겨있는)값을 form 요소에 주입할 수 있음.
+  회원 정보 수정 같은 수정 페이지 작성시 유용

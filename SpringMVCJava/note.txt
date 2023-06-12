@@ -1,0 +1,11 @@
+
+Java 클래스에서 설정하기
+
+web.xml : AbstractAnnotationConfigDispatcherServletInitializer 를 상속하거나
+		  WebApplicationInitializer 인터페이스를 구현
+		  
+root-context.xml : 상속이 없음
+				   같은 역할 하는 RootAppContext class 생성
+
+
+servlet-context.xml : WebMvcConfigurer 인터페이스를 구현함
