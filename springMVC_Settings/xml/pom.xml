@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>SpringMVCXml</groupId>
-  <artifactId>SpringMVCXml</artifactId>
+  <groupId>validate</groupId>
+  <artifactId>validate</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
@@ -59,7 +59,7 @@
 	    <artifactId>jstl-api</artifactId>
 	    <version>${javax.servlet.jsp.jstl-version}</version>
 	    <type>jar</type>
-	</dependency>  -->
+	</dependency> -->
 	<dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>jstl</artifactId>
@@ -72,18 +72,22 @@
 	    <version>${org.springframework-version}</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+	<dependency>
+	    <groupId>javax.validation</groupId>
+	    <artifactId>validation-api</artifactId>
+	    <version>2.0.1.Final</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+	<dependency>
+	    <groupId>org.hibernate.validator</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>6.1.2.Final</version>
+	</dependency>
+
+
 	
   </dependencies>
   
-  
-  
 </project>
-
-
-
-
-
-
-
-
-
