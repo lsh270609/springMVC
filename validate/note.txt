@@ -1,0 +1,31 @@
+
+유효성 검사
+
+	Spring MVC 로 처리함
+	Spring MVC 는 JSR-303 규격의 유효성 검사 library 를 사용함
+	Bean 에 data 가 입력될 때 어떤 검사를 할 것인지 
+	Annotation 으로 지정함 - 이 Annotation 의 조건에 맞지 않으면
+							 콘솔에서 입력값에 오류가 있다는 전달함
+	
+	pom.xml 에 dependency 추가하기
+		Maven repository 에서 Bean Validation API 검색
+		Maven repository 에서 hibernate validator 검색
+		
+	Bean 에 Annotation 설정하기
+	
+	@Size(min=2, max=10)
+	private String str1;
+	
+	@Max(100)
+	private int data2;
+	
+	검증
+	@Valid
+	Controller 의 메소드에서 주입받는 Bean에 
+	@Valid 어노테이션을 설정하면 유효성검사를 실행함.
+	유효성 검사 결과를 사용하려면 BindingResult 객체를 주입받아야 함.
+	
+	위 과정을 통해서 Controller 에서 사용자가 입력한 값이 유효한지 
+	파악함
+	
+	

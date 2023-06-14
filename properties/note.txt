@@ -1,0 +1,16 @@
+
+properties
+	application 을 개발할 때 프로그램 실행 중 변하면 안 되는 값들을 properties 파일에 작성하고 관리함
+	
+
+properties editor 설치
+	help -> Install new software -> add
+	name : propertyEditor
+	location : 	http://propedit.sourceforge.jp/eclipse/updates
+	PropertiesEditor 선택 -> fin
+	
+	
+@PropertySource : 사용할 properties 파일 하나 지정
+@PropertySources : 사용할 properties 파일 여러개 지정(Array 형태로 지정)
+	ex) @PropertySources({@PropertySource(properties파일경로1),
+					     {@PropertySource(properties파일경로2)})
