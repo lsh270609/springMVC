@@ -1,9 +1,7 @@
 package kr.co.tjoeun.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -31,13 +29,7 @@ public class ServletAppContext implements WebMvcConfigurer{
 		registry.addResourceHandler("/**").addResourceLocations("/resources/");
 	}
 	
-	// properties 파일을 Message 로 등록하기	
-	@Bean
-	public ReloadableResourceBundleMessageSource messageSource() {
-		ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
-		res.setBasename("/WEB-INF/properties/errorMessage");
-		return res;
-	}
+
 	
 
 	

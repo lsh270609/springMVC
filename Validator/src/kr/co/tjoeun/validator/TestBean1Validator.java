@@ -11,7 +11,7 @@ public class TestBean1Validator implements Validator{
 	// 유효성 검사할 data 를 가지고 있는 객체가 유효성 검사가 가능한지 확인함
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return TestBean1.class.isAssignableFrom(clazz);
+		return clazz.isAssignableFrom(TestBean1.class);
 	}
 
 	// 유효성 검사하는 메소드

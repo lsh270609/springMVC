@@ -22,6 +22,7 @@ public class TestController {
 	@PostMapping("/inputResult")
 	public String postInputResult(@Valid @ModelAttribute TestBean1 bean1,
 								  BindingResult result) {
+		
 		System.out.printf("data1 : %s\n", bean1.getData1());
 		System.out.printf("data2 : %s\n", bean1.getData2());
 		
@@ -30,6 +31,7 @@ public class TestController {
 		if(result.hasErrors()) {
 			//유효성 위반 결과 모두 가져옴
 			for(ObjectError error : result.getAllErrors()) {
+				System.out.println("---------------------------------------------");
 				System.out.printf("에러메세지 : %s\n", error.getDefaultMessage());
 				System.out.printf("에러 코드 : %s\n", error.getCode());
 				System.out.printf("object name : %s\n", error.getObjectName());
