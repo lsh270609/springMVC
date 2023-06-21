@@ -21,18 +21,7 @@ create table user_table(
 );
 
 create sequence user_seq start with 0 increment by 1 MINVALUE 0;
-drop sequence user_seq;
 
-select * from user_table;
-
-select user_name from user_table where user_id='userId1';
-select user_name from user_table where user_idx = 1;
-delete from user_table where user_idx=0;
-delete from user_table where user_idx=1;
-delete from user_table where user_idx=2;
-insert into user_table values(user_seq.nextval, 'admin', 'adminId1', 'adminPw1');
-insert into user_table values(user_seq.nextval, '유저일', 'userId1', 'userPw1');
-insert into user_table values(user_seq.nextval, '유저이', 'userId2', 'userPw2');
 
 create table content_table(
     content_idx number constraint CONTENT_PK primary key,
@@ -49,5 +38,3 @@ create table content_table(
 create sequence content_seq start with 0 increment by 1 minvalue 0;
 
 commit;
-
-select * from tabs;
