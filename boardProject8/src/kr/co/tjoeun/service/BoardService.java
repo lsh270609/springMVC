@@ -2,6 +2,7 @@ package kr.co.tjoeun.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.annotation.Resource;
 
@@ -60,8 +61,8 @@ public class BoardService {
 		boardDAO.insertContent(writeContentBean);
 	}
 	
-	public ContentBean selectContent(int board_info_idx) {
-		ContentBean getContentBean = boardDAO.selectContent(board_info_idx);
-		return getContentBean;
+	public ArrayList<ContentBean> selectContent(int board_info_idx) {
+		ArrayList<ContentBean> getContentBeanList = boardDAO.selectContent(board_info_idx);
+		return getContentBeanList;
 	}
 }

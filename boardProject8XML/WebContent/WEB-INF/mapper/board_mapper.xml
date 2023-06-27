@@ -8,5 +8,9 @@
 			insert into content_table values(content_seq.nextval, #{content_subject}, #{content_text}, 
 			#{content_file, jdbcType=VARCHAR}, #{content_writer_idx}, #{content_board_idx}, sysdate)
 		]]>
+		<!-- 
+		이미지 미추가시 content_file 에 들어오는 null 값이 들어옴에 따라 
+		일어날 수 있는 오류 방지 위해 jdbcType=VARCHAR 추가
+		-->
 	</select>
 </mapper>

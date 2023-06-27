@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+ 	<insert id="insertContent" parameterType="kr.co.tjoeun.bean.ContentBean">
+ 		<selectKey resultType="java.lang.Integer" keyProperty="content_idx" order="BEFORE">
+ 			<![CDATA[
+        		select content_seq.nextval from dual
+        	]]>       
+    	</selectKey> 
+		<![CDATA[
+			insert into content_table values(#{content_idx}, #{content_subject}, #{content_text}, 
+			#{content_file, jdbcType=VARCHAR}, #{content_writer_idx}, #{content_board_idx}, sysdate)
+		]]>
+		<!-- 
+		이미지 미추가시 content_file 에 들어오는 null 값이 들어옴에 따라 
+		일어날 수 있는 오류 방지 위해 jdbcType=VARCHAR 추가
+		-->
+	</insert>
+	
+	<select id="getBoardInfoName" parameterType="java.lang.Integer" resultType="java.lang.String">
+		<![CDATA[
+			select board_info_name from board_info_table WHERE board_info_idx = #{board_info_idx}
+		]]>
+	</select>
+	
+	<!-- 게시글 목록 불러오기 -->
+	<select id="getContentList" parameterType="java.lang.Integer" resultType="kr.co.tjoeun.bean.ContentBean">
+		<![CDATA[
+			select a.content_idx, a.content_subject, b.user_name as content_writer_name, TO_CHAR(a.content_date, 'YYYY-MM-DD HH24:MI:SS') as content_date 
+			from content_table a, user_table b 
+			where content_board_idx = #{board_info_idx} 
+			and a.content_writer_idx = b.user_idx order by content_idx desc
+		]]>
+	</select>
+	
+	<!-- 게시글 상세보기 -->
+	<select id="getContentDetail" parameterType="java.lang.Integer" resultType="kr.co.tjoeun.bean.ContentBean">
+		<![CDATA[
+			select b.user_name as content_writer_name, TO_CHAR(a.content_date, 'YYYY-MM-DD HH24:MI:SS') as content_date, a.content_subject, a.content_text, a.content_file, a.content_writer_idx 
+			from content_table a, user_table b 
+	 		where a.content_idx = #{content_idx} 
+	 		and a.content_writer_idx = b.user_idx
+		]]>
+	</select>
+</mapper>

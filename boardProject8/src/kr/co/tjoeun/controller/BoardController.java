@@ -1,5 +1,7 @@
 package kr.co.tjoeun.controller;
 
+import java.util.ArrayList;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +28,8 @@ public class BoardController {
 	public String boardMain(@RequestParam("board_info_idx") int board_info_idx,
 							Model model) {
 		model.addAttribute("board_info_idx", board_info_idx);
-		ContentBean getContentBean = boardService.selectContent(board_info_idx);
-		model.addAttribute("getContentBean", getContentBean);
+		ArrayList<ContentBean> getContentBeanList = boardService.selectContent(board_info_idx);
+		model.addAttribute("getContentBeanList", getContentBeanList);
 		return "board/main";
 	}
 	

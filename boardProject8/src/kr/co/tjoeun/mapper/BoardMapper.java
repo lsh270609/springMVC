@@ -1,5 +1,7 @@
 package kr.co.tjoeun.mapper;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,6 +14,6 @@ public interface BoardMapper {
 	 void insertContent(ContentBean writeContentBean);
 	 
 	 @Select(value= {"select a.*, b.user_name as content_writer_name from content_table a, user_table b WHERE CONTENT_BOARD_IDX = #{content_board_idx} and a.content_writer_idx = b.user_idx"})
-	 ContentBean selectContent(int content_board_idx);
+	 ArrayList<ContentBean> selectContent(int content_board_idx);
 }
 

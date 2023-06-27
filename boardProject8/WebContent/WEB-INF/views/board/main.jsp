@@ -32,9 +32,9 @@
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach var="content" items="${getContentBean }" varStatus="status"> 
+				<c:forEach var="content" items="${getContentBeanList }" varStatus="status"> 
 					<tr>
-						<td class="text-center d-none d-md-table-cell">${status.current }</td>
+						<td class="text-center d-none d-md-table-cell">${status.count }</td>
 						<td><a href='${root }/board/read?content_idx=${content.content_idx}'>${content.content_subject }</a></td>
 						<td class="text-center d-none d-md-table-cell">${content.content_writer_name }</td>
 						<td class="text-center d-none d-md-table-cell">${content.content_date }</td>
