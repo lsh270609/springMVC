@@ -29,4 +29,12 @@ public class BoardDAO {
 	public ContentBean getContentDetail(int content_idx) {
 		return sqlSessionTemplate.selectOne("board.getContentDetail", content_idx);
 	}
+	
+	public void updateContent(ContentBean modifyContentBean) {
+		sqlSessionTemplate.update("board.updateContent", modifyContentBean);
+	}
+	
+	public void deleteContent(int content_idx) {
+		sqlSessionTemplate.delete("board.deleteContent", content_idx);
+	}
 }

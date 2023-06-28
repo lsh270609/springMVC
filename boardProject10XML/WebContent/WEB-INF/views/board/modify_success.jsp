@@ -12,7 +12,7 @@
 <body>
 	<script>
 		alert("게시글 수정 성공.");
-		location.href = "${root}/";
+		location.href = "${root}/board/read?board_info_idx=${modifyContentBean.content_board_idx}&content_idx=${modifyContentBean.content_idx}";
 	</script>
 </body>
 </html>

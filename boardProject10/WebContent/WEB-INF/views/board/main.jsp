@@ -40,7 +40,7 @@
 							<td class="text-center d-none d-md-table-cell">${fn:length(getContentBeanList) - status.index }</td>
 							<td><a href='${root }/board/read?board_info_idx=${board_info_idx }&content_idx=${content.content_idx}'>${content.content_subject }</a></td>
 							<td class="text-center d-none d-md-table-cell">${content.content_writer_name }</td>
-							<td class="text-center d-none d-md-table-cell">${content.content_date }</td>
+							<td class="text-center d-none d-md-table-cell">${fn:substring(content.content_date, 0, 10) }</td>
 						</tr>
 						</c:forEach>
 					</c:when>

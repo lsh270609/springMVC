@@ -2,9 +2,11 @@ package kr.co.tjoeun.mapper;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
 
 import kr.co.tjoeun.bean.ContentBean;
 
@@ -34,5 +36,15 @@ public interface BoardMapper {
 	 		 "where a.content_idx = #{content_idx} " + 
 	 		 "and a.content_writer_idx = b.user_idx")
 	 ContentBean getContentDetail(int content_idx);
+	 
+	 // 상세보기 페이지 - 게시글 수정하기
+	 @Update("update content_table "
+	 		+ "set content_subject=#{content_subject}, content_text=#{content_text}, content_file=#{content_file, jdbcType=VARCHAR} "
+	 		+ "where content_idx=#{content_idx}")
+	 void updateContent(ContentBean modifyContentBean);
+	 
+	 // 상세보기 페이지 - 게시글 삭제하기
+	 @Delete("delete from content_table where content_idx=#{content_idx}")
+	 void deleteContent(int content_idx);
 }
 

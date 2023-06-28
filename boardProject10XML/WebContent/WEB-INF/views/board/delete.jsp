@@ -12,7 +12,7 @@
 <body>
 <script>
 	alert("게시물이 삭제되었습니다.");
-	location.href = "${root }/board/main";
+	location.href = "${root }/board/main?board_info_idx=${board_info_idx}";
 </script>
 </body>
 </html>

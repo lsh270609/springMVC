@@ -92,12 +92,21 @@ public class BoardController {
 	}
 	
 	@PostMapping("/modify_procedure")
-	public String modifyProcedure() {
-		return "";
+	public String modifyProcedure(@Valid @ModelAttribute("modifyContentBean") ContentBean modifyContentBean,
+			 					  BindingResult result) {
+		if(result.hasErrors()) {
+			return "board/modify";
+		}
+		boardService.updateContent(modifyContentBean);
+		return "board/modify_success";
 	}
 	
 	@GetMapping("/delete")
-	public String boardDelete() {
+	public String boardDelete(@RequestParam("board_info_idx") int board_info_idx,
+							  @RequestParam("content_idx") int content_idx,
+							  Model model) {
+		boardService.deleteContent(content_idx);
+		model.addAttribute("board_info_idx", board_info_idx);
 		return "board/delete";
 	}
 }

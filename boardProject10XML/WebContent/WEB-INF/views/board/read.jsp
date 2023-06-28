@@ -44,7 +44,7 @@
 					<c:if test="${!empty contentDetail.content_file }">
 					<div class="form-group">
 						<label for="board_file">첨부 이미지</label>
-						<img src="${root }/upload/${contentDetail.content_file }" width="100%"/>						
+						<img src="${root }/upload/${contentDetail.content_file }" width="100%"/>					
 					</div>
 					</c:if>
 					<div class="form-group">

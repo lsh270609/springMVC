@@ -31,11 +31,11 @@
 					<form:hidden path="content_board_idx"/>
 						<div class="form-group">
 							<form:label path="content_writer_name">작성자</form:label>
-							<form:input type="text" path="content_writer_name" class="form-control" value="${modifyContentBean.content_writer_name }" readonly="true"/>
+							<form:input type="text" path="content_writer_name" class="form-control" readonly="true"/>
 						</div>
 						<div class="form-group">
 							<form:label path="content_date">작성날짜</form:label>
-							<form:input type="text" path="content_date" class="form-control" value="${modifyContentBean.content_date }" readonly="true"/>
+							<form:input type="text" path="content_date" class="form-control" readonly="true"/>
 						</div>
 						<div class="form-group">
 							<form:label path="content_subject">제목</form:label>
@@ -49,15 +49,9 @@
 						</div>
 						<div class="form-group">
 							<form:label path="upload_file">첨부 이미지</form:label>
-							<c:choose>
-								<c:when test="${!empty modifyContentBean.content_file }">
-									<img src="${root }/upload/${modifyContentBean.content_file }" width="100%"/>
-									<form:input type="file" path="upload_file" class="form-control" accept="image/*"/>		
-								</c:when>
-								<c:otherwise>
-									<form:input type="file" path="upload_file" class="form-control" accept="image/*"/>
-								</c:otherwise>
-							</c:choose>
+							<img src="${root }/upload/${modifyContentBean.content_file }" width="100%"/>
+							<form:hidden path="content_file" />
+							<form:input type="file" path="upload_file" class="form-control" accept="image/*"/>
 						</div>
 						<div class="form-group">
 							<div class="text-right">
