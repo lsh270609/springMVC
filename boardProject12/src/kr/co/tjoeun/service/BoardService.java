@@ -92,6 +92,10 @@ public class BoardService {
 		 */
 	}
 	
+	public ArrayList<ContentBean> getContentList5(int board_info_idx){
+		return boardDAO.getContentList5(board_info_idx);
+	}
+	
 	public ContentBean getContentDetail(int content_idx) {
 		return boardDAO.getContentDetail(content_idx);
 	}

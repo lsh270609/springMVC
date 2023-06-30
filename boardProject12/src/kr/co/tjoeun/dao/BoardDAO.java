@@ -28,6 +28,10 @@ public class BoardDAO {
 		return boardMapper.getContentList(board_info_idx, rowBounds);
 	}
 	
+	public ArrayList<ContentBean> getContentList5(int board_info_idx){
+		return boardMapper.getContentList5(board_info_idx);
+	}
+	
 	public ContentBean getContentDetail(int content_idx) {
 		return boardMapper.getContentDetail(content_idx);
 	}

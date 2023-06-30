@@ -27,7 +27,6 @@ import kr.co.tjoeun.interceptor.CheckLoginInterceptor;
 import kr.co.tjoeun.interceptor.CheckWriterInterceptor;
 import kr.co.tjoeun.interceptor.TopMenuInterceptor;
 import kr.co.tjoeun.mapper.BoardMapper;
-import kr.co.tjoeun.mapper.MainMapper;
 import kr.co.tjoeun.mapper.TopMenuMapper;
 import kr.co.tjoeun.mapper.UserMapper;
 import kr.co.tjoeun.service.BoardService;
@@ -119,14 +118,6 @@ public class ServletAppContext implements WebMvcConfigurer{
 	@Bean
 	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory) throws Exception {
 		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
-		factoryBean.setSqlSessionFactory(factory);
-		return factoryBean;
-	}
-	
-	// MainMapper Mapper 등록
-	@Bean
-	public MapperFactoryBean<MainMapper> getMainMapper(SqlSessionFactory factory) throws Exception {
-		MapperFactoryBean<MainMapper> factoryBean = new MapperFactoryBean<MainMapper>(MainMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}

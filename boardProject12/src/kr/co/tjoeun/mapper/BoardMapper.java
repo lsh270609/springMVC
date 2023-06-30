@@ -31,6 +31,14 @@ public interface BoardMapper {
 	 			    + "order by content_idx desc"})
 	 ArrayList<ContentBean> getContentList(int board_info_idx, RowBounds rowBounds);
 	 
+	// 게시판 index 로 헤당 게시판 글 목록 상위 5개 레코드
+	 @Select(value= {"select content_idx, content_subject, TO_CHAR(content_date, 'YYYY-MM-DD HH24:MI:SS') as content_date "
+	 			    + "from content_table"
+	 			    + "where content_board_idx = #{content_board_idx} "
+	 			    + "and rownum <= 5 "
+	 			    + "order by content_idx desc"})
+	 ArrayList<ContentBean> getContentList5(int board_info_idx);
+	 
 	 // 게시글 상세보기
 	 @Select("select b.user_name as content_writer_name, TO_CHAR(a.content_date, 'YYYY-MM-DD HH24:MI:SS') as content_date, a.content_subject, a.content_text, a.content_file, a.content_writer_idx " + 
 	 		 "from content_table a, user_table b " + 
